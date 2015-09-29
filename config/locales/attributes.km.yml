@@ -1,0 +1,9 @@
+km:
+  activemodel:
+    attributes:
+      phone_number_query:
+        phone_number: "លេខទូរស័ព្ទ"
+        phone_number_type: "ប្រភេទ"
+        operator: "ក្រុមហ៊ុន"
+        operator_ceo: "អគ្គនាយកក្រុមហ៊ុន"
+        location: "ទីតាំង"

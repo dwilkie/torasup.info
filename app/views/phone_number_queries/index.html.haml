@@ -1,0 +1,20 @@
+.row
+  .col-xs-12{:style => "margin-bottom:5px;margin-top:5px;"}
+    = image_tag("torasup", :alt => "torasup", :class => "img-responsive center-block", :width => 200)
+
+= simple_form_for(@phone_number_query, :method => :get, :url => root_path) do |form|
+  .row
+    .col-xs-8.col-xs-offset-2
+      = form.input(:phone_number, :label => false, :placeholder => true, :input_html => {:name => :q, :pattern => "\\d*", "x-autocompletetype" => "tel", :data => {:mobile_phone_number => true}})
+      = form.button(:submit)
+
+- if @phone_number_query.executed?
+  %hr
+  .row
+    .col-xs-8.col-xs-offset-2
+      %dl.dl-horizontal
+        = @result.phone_number
+        = @result.phone_number_type
+        = @result.location
+        = @result.operator
+        = @result.operator_ceo

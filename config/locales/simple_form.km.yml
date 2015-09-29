@@ -1,0 +1,16 @@
+km:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+    error_notification:
+      default_message: "Please review the problems below:"
+    placeholders:
+      defaults:
+        phone_number: "Enter a Phone Number"
+
+  helpers:
+    submit:
+      create: "Torasup Search"

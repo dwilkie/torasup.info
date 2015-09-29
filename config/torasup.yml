@@ -1,0 +1,50 @@
+kh:
+  operators:
+    smart:
+      metadata:
+        website: "http://www.smart.com.kh"
+        ceo: "Thomas Hundt"
+        facebook: "https://www.facebook.com/SmartAxiata"
+    mobitel:
+      metadata:
+        website: "http://www.cellcard.com.kh"
+        ceo: "Ian Watson"
+        branding: "Cellcard"
+        facebook: "https://www.facebook.com/CellcardFanPage"
+    metfone:
+      metadata:
+        website: "http://www.metfone.com.kh"
+        ceo: "Hoang Trung Thanh"
+        facebook: "https://www.facebook.com/metfone.closer"
+    qb:
+      metadata:
+        website: "http://www.qbmore.com"
+        ceo: "Alan Sinfield"
+        branding: "qb"
+        facebook: "https://www.facebook.com/qbFan"
+    seatel:
+      metadata:
+        website: "http://www.seatelgroup.com"
+        ceo: "Han Hanchou"
+        facebook: "https://www.facebook.com/seatelgroup"
+    cootel:
+      metadata:
+        website: "http://www.cootel.com.kh/"
+        ceo: "Xu Guo Han"
+        facebook: "https://www.facebook.com/Cootel.Cambodia"
+    emaxx:
+      metadata:
+        website: "http://www.emaxxtelecom.com"
+        ceo: "Ai Min"
+        branding: "EMAXX"
+        facebook: "https://www.facebook.com/Emaxx4G"
+    camintel:
+      metadata:
+        website: "http://www.camintel.com"
+        ceo: "Kang Namkook"
+        facebook: "https://www.facebook.com/Camintel-447538678602329"
+    tc:
+      metadata:
+        website: "http://www.tc.com.kh"
+        ceo: "Kim Vikra"
+        facebook: "https://www.facebook.com/TelecomCambodia.TC"

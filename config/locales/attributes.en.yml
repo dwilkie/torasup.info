@@ -1,0 +1,9 @@
+en:
+  activemodel:
+    attributes:
+      phone_number_query:
+        phone_number: "Phone Number"
+        phone_number_type: "Type"
+        operator: "Company"
+        operator_ceo: "CEO"
+        location: "Location"

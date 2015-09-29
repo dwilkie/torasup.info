@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-mobile-phone-number
+//= require caret-version
 //= require_tree .
