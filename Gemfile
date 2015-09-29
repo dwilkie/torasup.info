@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby(File.read(".ruby-version").strip) if File.exist?(".ruby-version")
+
 gem 'rails', '4.2.4'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
