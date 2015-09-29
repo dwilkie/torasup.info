@@ -1,6 +1,6 @@
 # torasup.info
 
-This is the source code for [torasup.info](torasup.info)
+This is the source code for [torasup.info](http://torasup.info)
 
 ## Installation
 
