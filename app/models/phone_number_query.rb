@@ -12,8 +12,8 @@ class PhoneNumberQuery
 
   delegate :operator, :location, :type, :to => :torasup_number, :allow_nil => true
   delegate :name, :website, :branding, :ceo, :facebook, :to => :operator, :prefix => true, :allow_nil => true
-  delegate :area, :country_id, :to => :location, :allow_nil => true
-  delegate :name, :to => :country, :prefix => true, :allow_nil => true
+  delegate :area, :country_id, :to => :location, :prefix => true, :allow_nil => true
+  delegate :name, :to => :location_country, :prefix => true, :allow_nil => true
 
   alias_method :phone_number_type, :type
 
@@ -33,8 +33,8 @@ class PhoneNumberQuery
     !!@executed
   end
 
-  def country
-    @country = ISO3166::Country.new(country_id)
+  def location_country
+    @location_country = ISO3166::Country.new(location_country_id)
   end
 
   private

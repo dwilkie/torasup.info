@@ -37,11 +37,11 @@ class PhoneNumberQueryDecorator < Draper::Decorator
   end
 
   def operator_facebook
-    (model.operator_facebook && h.link_to(h.fa_icon(:facebook), model.operator_facebook)).presence
+    (model.operator_facebook && h.link_to(h.fa_icon(:facebook), model.operator_facebook, :id => "operator_facebook")).presence
   end
 
   def operator_website
-    (model.operator_website && h.link_to(h.fa_icon(:globe), model.operator_website)).presence
+    (model.operator_website && h.link_to(h.fa_icon(:globe), model.operator_website, :id => "operator_website")).presence
   end
 
   def operator_name
@@ -49,7 +49,7 @@ class PhoneNumberQueryDecorator < Draper::Decorator
   end
 
   def location_elements
-    @location_elements ||= [model.area, model.country_name].compact
+    @location_elements ||= [model.location_area, model.location_country_name].compact
   end
 
   def location_link
