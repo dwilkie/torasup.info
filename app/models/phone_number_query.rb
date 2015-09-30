@@ -11,7 +11,10 @@ class PhoneNumberQuery
   before_validation :normalize_phone_number
 
   delegate :operator, :location, :type, :to => :torasup_number, :allow_nil => true
-  delegate :name, :website, :branding, :ceo, :facebook, :to => :operator, :prefix => true, :allow_nil => true
+  delegate :name, :facebook, :website, :branding, :customer_service_phone,
+           :ceo_name, :ceo_email, :ceo_phone, :ceo_linked_in,
+           :to => :operator, :prefix => true, :allow_nil => true
+
   delegate :area, :country_id, :to => :location, :prefix => true, :allow_nil => true
   delegate :name, :to => :location_country, :prefix => true, :allow_nil => true
 

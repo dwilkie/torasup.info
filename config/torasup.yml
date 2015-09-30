@@ -3,48 +3,65 @@ kh:
     smart:
       metadata:
         website: "http://www.smart.com.kh"
-        ceo: "Thomas Hundt"
         facebook: "https://www.facebook.com/SmartAxiata"
+        customer_service_phone: "85510201000"
+        ceo_name: "Thomas Hundt"
+        ceo_email: "thomas.hundt@smart.com.kh"
+        ceo_phone: "85510202101"
     mobitel:
       metadata:
         website: "http://www.cellcard.com.kh"
-        ceo: "Ian Watson"
         branding: "Cellcard"
         facebook: "https://www.facebook.com/CellcardFanPage"
+        customer_service_phone: "85512812812"
+        ceo_name: "Ian Watson"
+        ceo_email: "iandidit@hotmail.com"
+        ceo_linked_in: "https://www.linkedin.com/pub/ian-watson/0/58a/62a"
     metfone:
       metadata:
         website: "http://www.metfone.com.kh"
-        ceo: "Hoang Trung Thanh"
         facebook: "https://www.facebook.com/metfone.closer"
+        customer_service_phone: "855974097079"
+        ceo_name: "Hoang Trung Thanh"
     qb:
       metadata:
         website: "http://www.qbmore.com"
-        ceo: "Alan Sinfield"
         branding: "qb"
         facebook: "https://www.facebook.com/qbFan"
+        customer_service_phone: "85513300300"
+        ceo_name: "Alan Sinfield"
+        ceo_email: "alan.sinfield@qbmore.com"
+        ceo_linked_in: "https://www.linkedin.com/pub/alan-sinfield/0/320/551"
     seatel:
       metadata:
         website: "http://www.seatelgroup.com"
-        ceo: "Han Hanchou"
         facebook: "https://www.facebook.com/seatelgroup"
+        customer_service_phone: "855189800800"
+        ceo_name: "Han Hanchou"
     cootel:
       metadata:
         website: "http://www.cootel.com.kh/"
-        ceo: "Xu Guo Han"
         facebook: "https://www.facebook.com/Cootel.Cambodia"
+        customer_service_phone: "855234703838"
+        ceo_name: "Xu Guo Han"
+        ceo_email: "guanghanxu@hotmail.com"
     emaxx:
       metadata:
         website: "http://www.emaxxtelecom.com"
-        ceo: "Ai Min"
         branding: "EMAXX"
         facebook: "https://www.facebook.com/Emaxx4G"
+        customer_service_phone: "85523999818"
+        ceo_name: "Ai Min"
     camintel:
       metadata:
         website: "http://www.camintel.com"
-        ceo: "Kang Namkook"
         facebook: "https://www.facebook.com/Camintel-447538678602329"
+        customer_service_phone: "85523986789"
+        ceo_name: "Kang Namkook"
+        ceo_linked_in: "https://www.linkedin.com/pub/namkook-%EA%B0%95%EB%82%A8%EA%B5%AD/46/897/737"
     tc:
       metadata:
         website: "http://www.tc.com.kh"
-        ceo: "Kim Vikra"
         facebook: "https://www.facebook.com/TelecomCambodia.TC"
+        customer_service_phone: "85523722227"
+        ceo_name: "Kim Vikra"

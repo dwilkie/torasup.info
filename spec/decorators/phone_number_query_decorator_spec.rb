@@ -57,6 +57,7 @@ describe PhoneNumberQueryDecorator do
     let(:operator_name) { nil }
     let(:operator_facebook) { nil }
     let(:operator_website) { nil }
+    let(:operator_customer_service_phone) { nil }
 
     def setup_double
       super
@@ -64,6 +65,7 @@ describe PhoneNumberQueryDecorator do
       allow(phone_number_query).to receive(:operator_name).and_return(operator_name)
       allow(phone_number_query).to receive(:operator_facebook).and_return(operator_facebook)
       allow(phone_number_query).to receive(:operator_website).and_return(operator_website)
+      allow(phone_number_query).to receive(:operator_customer_service_phone).and_return(operator_customer_service_phone)
     end
 
     it { expect(result).to eq(nil) }
@@ -78,6 +80,12 @@ describe PhoneNumberQueryDecorator do
         it { expect(result).to have_content("Cellcard") }
         it { expect(result).not_to have_content("Mobitel") }
       end
+    end
+
+    context "operator has a customer service phone" do
+      let(:operator_customer_service_phone) { "85512202101" }
+      it { expect(result).to have_link("operator_customer_service_phone", :href => "tel:+855 12 202 101") }
+      it { assert_description_list_item!(result) }
     end
 
     context "operator has a facebook page" do
@@ -95,18 +103,42 @@ describe PhoneNumberQueryDecorator do
 
   describe "#operator_ceo" do
     let(:result) { subject.operator_ceo }
-    let(:operator_ceo) { nil }
+    let(:operator_ceo_name) { nil }
+    let(:operator_ceo_phone) { nil }
+    let(:operator_ceo_email) { nil }
+    let(:operator_ceo_linked_in) { nil }
 
     def setup_double
       super
-      allow(phone_number_query).to receive(:operator_ceo).and_return(operator_ceo)
+      allow(phone_number_query).to receive(:operator_ceo_name).and_return(operator_ceo_name)
+      allow(phone_number_query).to receive(:operator_ceo_phone).and_return(operator_ceo_phone)
+      allow(phone_number_query).to receive(:operator_ceo_email).and_return(operator_ceo_email)
+      allow(phone_number_query).to receive(:operator_ceo_linked_in).and_return(operator_ceo_linked_in)
     end
 
     it { expect(result).to eq(nil) }
 
-    context "operator has a CEO" do
-      let(:operator_ceo) { "Ian Watson" }
+    context "operator CEO has a name" do
+      let(:operator_ceo_name) { "Ian Watson" }
       it { expect(result).to have_content("Ian Watson") }
+      it { assert_description_list_item!(result) }
+    end
+
+    context "operator CEO has a phone" do
+      let(:operator_ceo_phone) { "85512202101" }
+      it { expect(result).to have_link("operator_ceo_phone", :href => "tel:+855 12 202 101") }
+      it { assert_description_list_item!(result) }
+    end
+
+    context "operator CEO has an email" do
+      let(:operator_ceo_email) { "ian.watson@cellcard.com.kh" }
+      it { expect(result).to have_link("operator_ceo_email", :href => "mailto:ian.watson@cellcard.com.kh") }
+      it { assert_description_list_item!(result) }
+    end
+
+    context "operator CEO has a linked in profile" do
+      let(:operator_ceo_linked_in) { "https://linkedin.com/ian_watson" }
+      it { expect(result).to have_link("operator_ceo_linked_in", :href => "https://linkedin.com/ian_watson") }
       it { assert_description_list_item!(result) }
     end
   end
