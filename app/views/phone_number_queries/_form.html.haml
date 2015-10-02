@@ -1,0 +1,5 @@
+= simple_form_for(@phone_number_query, :method => :get, :url => root_path) do |form|
+  .row
+    .col-xs-8.col-xs-offset-2
+      = form.input(:phone_number, :label => false, :placeholder => true, :input_html => {:name => :q, :pattern => "\\d*", "x-autocompletetype" => "tel", :data => {:mobile_phone_number => true}})
+      = form.button(:submit)
