@@ -20,6 +20,10 @@ gem 'http_accept_language'
 gem 'draper'
 gem 'rails-assets-jquery-mobile-phone-number', :source => 'https://rails-assets.org'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'foreman'
