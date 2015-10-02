@@ -73,4 +73,8 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.middleware.use(Rack::Tracker) do
+    handler :google_analytics, { tracker: ENV["GOOGLE_ANALYTICS_TRACKING_ID"] }
+  end
 end

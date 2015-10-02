@@ -22,6 +22,7 @@ gem 'rails-assets-jquery-mobile-phone-number', :source => 'https://rails-assets.
 
 group :production do
   gem 'rails_12factor'
+  gem 'rack-tracker'
 end
 
 group :development, :test do
