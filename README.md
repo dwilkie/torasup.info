@@ -1,5 +1,7 @@
 # torasup.info
 
+[![Build Status](https://travis-ci.org/dwilkie/torasup.info.svg)](https://travis-ci.org/dwilkie/torasup.info)
+
 This is the source code for [torasup.info](http://torasup.info)
 
 ## Installation
