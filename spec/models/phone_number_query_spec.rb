@@ -15,6 +15,7 @@ describe PhoneNumberQuery do
     it { is_expected.not_to allow_value("85512 236 1397").for(:phone_number) }
     it { is_expected.not_to allow_value("12 236 1397").for(:phone_number) }
     it { is_expected.not_to allow_value("012 236 1397").for(:phone_number) }
+    it { is_expected.to allow_value("+84 8 3827 9666").for(:phone_number) }
   end
 
   describe "ActiveModel" do
@@ -32,40 +33,28 @@ describe PhoneNumberQuery do
   end
 
   describe "#execute" do
-    let(:result) { subject.execute }
-
-    before { result }
+    before { subject.execute }
 
     context "for a valid number" do
       let(:phone_number) { "012 236 139" }
-      it { expect(result).to eq(true) }
+      it { expect(subject).to be_executed }
     end
 
     context "for an invalid number" do
       let(:phone_number) { "012 236 1390" }
-      it { expect(result).to eq(false) }
+      it { expect(subject).not_to be_executed }
     end
   end
 
-  describe "#to_hash" do
-    let(:result) { subject.to_hash }
-    let(:asserted_attributes) { [:operator_name, :area, :type] }
-    it { expect(result.keys).to match_array(asserted_attributes) }
-
-    describe "for a valid landline number" do
-      let(:phone_number) { "855234532345" }
-
-      it { expect(result[:area]).to eq("Phnom Penh") }
-      it { expect(result[:operator_name]).to eq("Smart") }
-      it { expect(result[:type]).to eq("landline") }
+  describe "#location_country_name" do
+    context "Local Number" do
+      let(:phone_number) { "012 236 139" }
+      it { expect(subject.location_country_name).to eq("Cambodia") }
     end
 
-    describe "for a valid mobile number" do
-      let(:phone_number) { "012 236 139" }
-
-      it { expect(result[:area]).to eq(nil) }
-      it { expect(result[:operator_name]).to eq("Mobitel") }
-      it { expect(result[:type]).to eq("mobile") }
+    context "International Number" do
+      let(:phone_number) { "+84 8 3827 9666" }
+      it { expect(subject.location_country_name).to eq("Vietnam") }
     end
   end
 end

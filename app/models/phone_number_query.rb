@@ -1,7 +1,6 @@
 class PhoneNumberQuery
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
-#  extend ActiveModel::Translation
 
   DEFAULT_COUNTRY_CODE = "855"
 
@@ -37,7 +36,7 @@ class PhoneNumberQuery
   end
 
   def location_country
-    @location_country = ISO3166::Country.new(location_country_id)
+    @location_country ||= ISO3166::Country.new(location_country_id)
   end
 
   private
@@ -50,18 +49,19 @@ class PhoneNumberQuery
     DEFAULT_COUNTRY_CODE
   end
 
+  def set_phone_number(number_to_set)
+    Phony.plausible?(number_to_set) && (number_to_set = Phony.normalize(number_to_set)) && (self.phone_number = "+" + number_to_set)
+  end
+
   def normalize_phone_number
     return if phone_number.blank?
     normalized_phone_number = phone_number.to_s.dup
-    normalized_phone_number.gsub!(/\D/, "")                        # remove any non digits
-    normalized_phone_number.gsub!(/\A#{default_country_code}/, "") # remove default country code
-    normalized_phone_number.gsub!(/^\A0+/, "")                     # remove any leading zeros
+    normalized_phone_number.gsub!(/\D/, "")                           # remove any non digits
 
-    normalized_phone_number_with_country_code = default_country_code + normalized_phone_number
-
-    normalized_phone_number = Phony.plausible?(normalized_phone_number_with_country_code) ? normalized_phone_number_with_country_code : phone_number
-
-    normalized_phone = Phony.normalize(normalized_phone_number) rescue nil
-    self.phone_number = "+" + normalized_phone if normalized_phone && Phony.plausible?(normalized_phone)
+    set_phone_number(normalized_phone_number) && return               # assume number international
+    normalized_phone_number.gsub!(/\A#{default_country_code}/, "")    # remove default country code
+    normalized_phone_number.gsub!(/^\A0+/, "")                        # remove any leading zeros
+    set_phone_number(default_country_code + normalized_phone_number)  # add default country code
+    true
   end
 end
