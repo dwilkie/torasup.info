@@ -1,0 +1,14 @@
+%footer.navbar.navbar-default.navbar-fixed-bottom
+  .container-fluid
+    .col-xs-4
+      %ul.nav.navbar-nav
+        %li
+          = mail_to("advertising@torasup.info", translate(".advertising"))
+    .col-xs-4
+      %ul.nav.navbar-nav
+        %li
+          = mail_to("contact@torasup.info", translate(".contact"))
+    .col-xs-4
+      #ul.nav.navbar-nav
+        %li
+          = link_to(fa_icon(:github), "https://github.com/dwilkie/torasup.info")

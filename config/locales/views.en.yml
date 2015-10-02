@@ -1,4 +1,5 @@
 en:
-  phone_number_queries:
-    index:
-      result: "Result"
+  layouts:
+    footer:
+      advertising: "Advertising"
+      contact: "Contact"

@@ -1,4 +1,5 @@
 km:
-  phone_number_queries:
-    index:
-      result: "លទ្ធផល"
+  layouts:
+    footer:
+      advertising: "ឧបត្ថម្ភ"
+      contact: "ទំនក់ទំនង"
