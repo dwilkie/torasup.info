@@ -29,6 +29,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'foreman'
   gem 'pry'
+  gem 'i18n-tasks'
 end
 
 group :test do
