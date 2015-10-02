@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dwilkie/torasup.info.svg)](https://travis-ci.org/dwilkie/torasup.info)
 
-This is the source code for [torasup.info](http://torasup.info)
+Source code for [torasup.info](http://torasup.info)
 
 ## Installation
 
@@ -25,3 +25,9 @@ You can boot the development server with:
 ```
 $ bundle exec foreman start web
 ```
+
+## Contributing
+
+[torasup.info](http://torasup.info) uses the [torasup gem](https://github.com/dwilkie/torasup) in order to lookup phone number data. To add phone number data for new countries or new operators, open up a pull request over there.
+
+If you'd like to contribute to the look and feel of [torasup.info](http://torasup.info) you can open a pull request here.
